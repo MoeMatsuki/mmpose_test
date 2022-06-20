@@ -26,3 +26,6 @@ log_dir_name = "log"　# ←logの名前も変更したほうがいい
 img_log = osp.join(log_dir_name, "img")
 json_log = osp.join(log_dir_name, "json")
 ~~~
+
+# 環境で参考にする
+https://github.com/open-mmlab/mmpose/blob/master/docs/en/install.md

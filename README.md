@@ -1,8 +1,16 @@
+# 環境で参考にする
+condaはライセンス料金がかかるので、Dockerを使うほうがいい。
+
+dockerを使う場合'''bash setup.sh'''は不要です。
+
+https://github.com/open-mmlab/mmpose/blob/master/docs/en/install.md
+
+
 # setup
 ~~~
 git clone https://github.com/MoeMatsuki/mmpose_test
 cd mmpose_test
-bash setup.sh
+bash setup.sh　# colab上では必要だが、docker環境では実行不要
 ~~~
 
 # テスト
@@ -26,6 +34,3 @@ log_dir_name = "log"　# ←logの名前も変更したほうがいい
 img_log = osp.join(log_dir_name, "img")
 json_log = osp.join(log_dir_name, "json")
 ~~~
-
-# 環境で参考にする
-https://github.com/open-mmlab/mmpose/blob/master/docs/en/install.md

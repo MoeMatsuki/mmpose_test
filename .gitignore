@@ -1,5 +1,6 @@
 data/
 mmpose/
 test_data/
-mmpose/
+log/
+model/
 .DS_Store

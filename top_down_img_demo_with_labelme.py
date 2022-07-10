@@ -131,7 +131,8 @@ def main():
                 out_file = None
             else:
                 os.makedirs(args.out_img_root, exist_ok=True)
-                out_file = os.path.join(args.out_img_root, f'vis_{i}.jpg')
+                print(args.out_img_root, file_names[i])
+                out_file = os.path.join(args.out_img_root, f'vis_{file_names[i]}.jpg')
 
             vis_result = vis_pose_result(
                 pose_model,

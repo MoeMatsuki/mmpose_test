@@ -1,5 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import os
+from tarfile import SUPPORTED_TYPES
 import warnings
 from argparse import ArgumentParser
 
@@ -11,6 +12,7 @@ import numpy as np
 
 sys.path.append(os.path.join(os.getcwd(), ".."))
 sys.path.append(os.getcwd())
+SUPPORTED_IMGS = ["JPG", "PNG"]
 
 from mmpose.apis import (inference_top_down_pose_model, init_pose_model,
                          vis_pose_result)
@@ -100,7 +102,8 @@ def main():
 
     # e.g. use ('backbone', ) to return backbone feature
     output_layer_names = None
-    file_names = [f for f in os.listdir(args.img_root) if ".JPG" in f]
+    files_file = [f for f in os.listdir(args.img_root) if os.path.isfile(os.path.join(args.img_root, f))]
+    file_names = [f for f in files_file if f.split(".")[1].upper() in SUPPORTED_IMGS]
 
     # process each image
     for i in range(len(file_names)):  
